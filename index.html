@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3S Batik Gallery - Authentic Batik Fashion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.5rem;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .whatsapp { background: #25D366; color: white; }
+        .instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; }
+        .facebook { background: #1877F2; color: white; }
+
+        nav {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-link {
+            padding: 0.5rem 1rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .nav-link:hover {
+            background: #f0f0f0;
+        }
+
+        .category-section {
+            padding: 3rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .category-section:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .category-header h2 {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .product-info p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .inquiry-btn {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            background: #25D366;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .inquiry-btn:hover {
+            background: #20bd5a;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>3S Batik Gallery</h1>
+                <p>Authentic Handcrafted Batik Fashion for Women</p>
+                <div class="social-links">
+                    <a href="https://wa.me/919405260790?text=Hi,%20I'm%20interested%20in%20your%20Batik%20Products" class="social-btn whatsapp" target="_blank">
+                        📱 WhatsApp
+                    </a>
+                    <a href="https://instagram.com/3sbatikgallery" class="social-btn instagram" target="_blank">
+                        📷 Instagram
+                    </a>
+                    <a href="https://facebook.com/3sbatikgallery" class="social-btn facebook" target="_blank">
+                        👍 Facebook
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#kurtis" class="nav-link">Kurtis</a>
+            <a href="#pants" class="nav-link">Pants</a>
+            <a href="#palazzos" class="nav-link">Palazzos</a>
+            <a href="#gowns" class="nav-link">Gowns</a>
+            <a href="#dress-materials" class="nav-link">Dress Materials</a>
+            <a href="#cord-sets" class="nav-link">Cord Sets</a>
+            <a href="#palazzo-sets" class="nav-link">Palazzo Sets</a>
+            <a href="#capris" class="nav-link">Capris</a>
+            <a href="#bedsheets" class="nav-link">Bed Sheets</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Batik Kurtis -->
+        <section id="kurtis" class="category-section">
+            <div class="container">
+                <div class="category-header">
+                    <h2>Batik Kurtis</h2>
+                    <p>Elegant handcrafted batik kurtis for every occasion</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">👗</div>
+                        <div class="product-info">
+                            <h3>Long Batik Kurti</h3>
+                            <p>Elegant long batik kurti with intricate patterns, perfect for formal and casual wear</p>
+                            <a href="https://wa.me/919876543210?text=I'm%20interested%20in%20Long%20Batik%20Kurti" class="inquiry-btn">Inquire on WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">👚</div>
+                        <div class="product-info">
+                            <h3>Short Batik Kurti</h3>
+                            <p>Stylish short batik kurti with vibrant colors and traditional designs</p>
+                            <a href="https://wa.me/919876543210?text=I'm%20interested%20in%20Short%20Batik%20Kurti" class="inquiry-btn">Inquire on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Batik Pants -->
+        <section id="pants" class="category-section">
+            <div class="container">
+                <div class="category-header">
+                    <h2>Batik Pants</h2>
+                    <p>Comfortable and stylish batik pants collection</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">👖</div>
+                        <div class="product-info">
+                            <h3>Long Batik Pants</h3>
+                            <p>Full-length batik pants with unique patterns and comfortable fit</p>
+                            <a href="https://wa.me/919876543210?text=I'm%20interested%20in%20Long%20Batik%20Pants" class="inquiry-btn">Inquire on WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">🩳</div>
+                        <div class="product-info">
+                            <h3>Short Batik Pants</h3>
+                            <p>Casual short batik pants perfect for summer wear</p>
+                            <a href="https://wa.me/919876543210?text=I'm%20interested%20in%20Short%20Batik%20Pants" class="inquiry-btn">Inquire on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Batik Palazzos -->
+        <section id="palazzos" class="category-section">
+            <div class="container">
+                <div class="category-header">
+                    <h2>Batik Palazzos</h2>
+                    <p>Flowy and comfortable batik palazzos for effortless style</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">👘</div>
+                        <div class="product-info">
+                            <h3>Batik Palazzo</h3>
+                            <p>Wide-leg batik palazzo with beautiful traditional prints</p>
+                            <a href="https://wa.me/919876543210?text=I'm%20interested%20in%20Batik%20Palazzo" class="inquiry-btn">Inquire on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Batik Gowns -->
+        <section id="gowns" class="category-section">
+            <div class="container">
+                <div class="category-header">
+                    <h2>Batik Gowns</h2>
+                    <p>Stunning batik gowns for special occasions</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">👗</div>
+                        <div class="product-info">
+                            <h3>Batik Evening Gown</h3>
+                            <p>Elegant batik gown with exquisite craftsmanship and design</p>
+                            <a href="https://wa.me/919876543210?text=I'm%20interested%20in%20Batik%20Gown" class="inquiry-btn">Inquire on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Batik Dress Materials -->
+        <section id="dress-materials" class="category-section">
+            <div class="container">
+                <div class="category-header">
+                    <h2>Batik Dress Materials</h2>
+                    <p>Premium batik fabrics for custom tailoring</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">🧵</div>
+                        <div class="product-info">
+                            <h3>Batik Dress Material</h3>
+                            <p>High-quality batik fabric sets ready for stitching your perfect outfit</p>
+                            <a href="https://wa.me/919876543210?text=I'm%20interested%20in%20Batik%20Dress%20Material" class="inquiry-btn">Inquire on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Batik Cord Sets -->
+        <section id="cord-sets" class="category-section">
+            <div class="container">
+                <div class="category-header">
+                    <h2>Batik Cord Sets</h2>
+                    <p>Matching batik top and bottom sets</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">👔</div>
+                        <div class="product-info">
+                            <h3>Batik Cord Set</h3>
+                            <p>Coordinated batik top and bottom set for a complete look</p>
+                            <a href="https://wa.me/919876543210?text=I'm%20interested%20in%20Batik%20Cord%20Set" class="inquiry-btn">Inquire on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Batik Palazzo Sets -->
+        <section id="palazzo-sets" class="category-section">
+            <div class="container">
+                <div class="category-header">
+                    <h2>Batik Palazzo Sets</h2>
+                    <p>Complete batik palazzo sets with matching tops</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">🎽</div>
+                        <div class="product-info">
+                            <h3>Batik Palazzo Set</h3>
+                            <p>Stylish batik palazzo paired with coordinated top</p>
+                            <a href="https://wa.me/919876543210?text=I'm%20interested%20in%20Batik%20Palazzo%20Set" class="inquiry-btn">Inquire on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Batik Capris -->
+        <section id="capris" class="category-section">
+            <div class="container">
+                <div class="category-header">
+                    <h2>Batik Capris</h2>
+                    <p>Comfortable batik capris for casual wear</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">🩱</div>
+                        <div class="product-info">
+                            <h3>Batik Capri</h3>
+                            <p>Trendy batik capris perfect for everyday comfort</p>
+                            <a href="https://wa.me/919876543210?text=I'm%20interested%20in%20Batik%20Capris" class="inquiry-btn">Inquire on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Batik Bed Sheets -->
+        <section id="bedsheets" class="category-section">
+            <div class="container">
+                <div class="category-header">
+                    <h2>Batik Bed Sheets</h2>
+                    <p>Beautiful batik bed sheets for your home</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">🛏️</div>
+                        <div class="product-info">
+                            <h3>Single Batik Bed Sheet</h3>
+                            <p>Premium single bed batik sheet with vibrant designs</p>
+                            <a href="https://wa.me/919876543210?text=I'm%20interested%20in%20Single%20Batik%20Bed%20Sheet" class="inquiry-btn">Inquire on WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">🛌</div>
+                        <div class="product-info">
+                            <h3>Double Batik Bed Sheet</h3>
+                            <p>Luxurious double bed batik sheet with traditional patterns</p>
+                            <a href="https://wa.me/919876543210?text=I'm%20interested%20in%20Double%20Batik%20Bed%20Sheet" class="inquiry-btn">Inquire on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 3S Batik Gallery. All Rights Reserved.</p>
+            <p>Handcrafted with love in India</p>
+            <div class="footer-social">
+                <a href="https://wa.me/919876543210?text=Hi,%20I'm%20interested%20in%20your%20batik%20products" style="color: white; text-decoration: none;">📱 WhatsApp</a>
+                <a href="https://instagram.com/3sbatikgallery" style="color: white; text-decoration: none;">📷 Instagram</a>
+                <a href="https://facebook.com/3sbatikgallery" style="color: white; text-decoration: none;">👍 Facebook</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
